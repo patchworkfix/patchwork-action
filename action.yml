@@ -1,5 +1,5 @@
 name: "Patchwork security scan"
-description: "Scan every pull request for leaked keys, open database rules, unauthenticated API routes and unbounded paid-API usage. Code never leaves your CI."
+description: "Scan every pull request for leaked keys, open database rules, unauthenticated routes and runaway AI costs."
 author: "Patchworkfix"
 branding: { icon: "shield", color: "green" }
 inputs:
