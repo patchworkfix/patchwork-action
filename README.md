@@ -1,5 +1,9 @@
 # Patchwork security scan (GitHub Action)
 
+[![test](https://github.com/patchworkfix/patchwork-action/actions/workflows/test.yml/badge.svg)](https://github.com/patchworkfix/patchwork-action/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-84cc16.svg)](LICENSE)
+
+> Catch leaked keys, open database rules and runaway AI bills in vibe-coded apps — on every pull request, without your code leaving CI.
+
 Scans every pull request with the same checks as the free scanner on [patchworkfix.com](https://www.patchworkfix.com):
 
 - Leaked keys (OpenAI, Anthropic, Stripe, AWS, Google/Firebase, GitHub, Slack, private keys) and committed `.env` files
@@ -42,3 +46,7 @@ Static checks only: it can miss things and flag false positives, and it doesn't 
 ## Development
 
 `npm ci && npm run build` bundles `src/` into `dist/index.js` (commit `dist/`). `src/scanner.ts` and `src/secretPatterns.ts` are copied from the patchwork site repo's `lib/`.
+
+## License
+
+[MIT](LICENSE) © Patchworkfix
