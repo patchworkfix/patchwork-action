@@ -12,4 +12,4 @@ outputs:
   grade: { description: "Grade A-F" }
   critical: { description: "Number of critical findings" }
   high: { description: "Number of high findings" }
-runs: { using: "node20", main: "dist/index.js" }
+runs: { using: "node24", main: "dist/index.js" }
