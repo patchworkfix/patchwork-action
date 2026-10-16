@@ -1,0 +1,14 @@
+name: test
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  self-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: scan
+        uses: ./
+        with: { path: test/fixtures, fail-on: none, comment: "false" }
+      - name: Expect the open Firestore rule to be caught
+        run: |
+          test "${{ steps.scan.outputs.critical }}" -ge 1
+          echo "score=${{ steps.scan.outputs.score }} grade=${{ steps.scan.outputs.grade }}"

@@ -1,0 +1,15 @@
+name: "Patchwork security scan"
+description: "Scan every pull request for leaked keys, open database rules, unauthenticated API routes and unbounded paid-API usage. Code never leaves your CI."
+author: "Patchworkfix"
+branding: { icon: "shield", color: "green" }
+inputs:
+  github-token: { description: "Token used to post the PR comment", required: false, default: "${{ github.token }}" }
+  fail-on: { description: "Fail the check at this severity or worse: critical, high, medium, low, or none", required: false, default: "critical" }
+  comment: { description: "Post/update a PR comment with the results (true/false)", required: false, default: "true" }
+  path: { description: "Directory to scan", required: false, default: "." }
+outputs:
+  score: { description: "Score 0-100" }
+  grade: { description: "Grade A-F" }
+  critical: { description: "Number of critical findings" }
+  high: { description: "Number of high findings" }
+runs: { using: "node20", main: "dist/index.js" }
